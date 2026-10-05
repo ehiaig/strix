@@ -112,7 +112,7 @@ weave, amber accents) so the GLB stays small.
 OWL
 ├─ A_core: P_frame (keel + girdle), P_battery, P_fc, P_vision (+IMU), P_pdu,
 │          P_shell_front, P_shell_rear, P_flank_L/R, P_ventral, J_scapular_L/R → P_scapular_L/R,
-│          P_antenna (comms downlink — the surveillance cameras are the head's own eyes)
+│          P_sensorPod (ventral surveillance turret), P_antenna (comms downlink)
 ├─ A_head: P_neck, J_neckPitch → P_neckCradle, J_neckYaw → A_headUnit
 │    └─ P_headFrame, P_crown, P_face_L/R, P_beak, J_eye_L/R → P_optic_L/R (iris blades K_iris_*, lids J_lid*)
 ├─ A_wing_L/R: P_rootMotor, P_capstan, J_shoulder → P_shoulderHub, P_sectorDrum, P_torsionSpring, P_pitchServo
@@ -196,8 +196,8 @@ keeps the user's orbit offset. Flight plays back at 0.65× real time to make the
 
 Full details, estimates and sources of each figure are in [`ENGINEERING.md`](ENGINEERING.md).
 
-* 2.29 kg budget mass (computed from per-part budgets in the model, including an 8 g comms antenna; the
-  surveillance cameras are the head's own forward eyes, so they add no mass), 1.44 m span, 0.37 m², aspect ratio 5.6,
+* 2.33 kg budget mass (computed from per-part budgets in the model, including a 53 g surveillance payload —
+  the ventral EO/IR turret and comms antenna), 1.44 m span, 0.37 m², aspect ratio 5.6,
   wing loading 60–70 N/m²; cruise 10.5 m/s at mean C_L ≈ 0.9; 30 % growth margin carried.
 * Each wing is driven independently by a 58 mm pancake motor through a 3 : 1 belt and a 4.6 : 1 Dyneema
   capstan stage to a sector drum on the stroke axle, with an **elastomer torsion spring** tuned to resonance

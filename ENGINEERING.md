@@ -176,7 +176,7 @@ drop over the folded wing roots. The primaries end ≈ 10 cm below the perch bar
 | CG | centreline, ≈ 22 mm behind and ≈ 27 mm below the stroke axes *(computed from the budget)* |
 
 Mass by group (g): wing drive 648 · core 496 · wings 465 · landing gear 184 · head 170 · shells 168 ·
-payload 8 (comms antenna; the surveillance cameras are the head eyes, § 8) ·
+payload 53 (surveillance turret + antenna, § 8) ·
 wiring & misc 90 · tail 60.
 
 * Wing drive per side: motor 150, belt + capstan stage 28, hub + worm sweep servo + axle encoder 40, sector drum
@@ -192,9 +192,9 @@ wiring & misc 90 · tail 60.
 * Head 170 g (7 %): two cameras, iris and lid actuators, a two-axis neck. It is the price of the owl.
 * Legs 92 g each: hip actuator + latch + catapult leaf spring 40, upper leg 22, tarsus 12, foot 18.
 * Wiring, connectors and fasteners 90 g (≈ 4 %) for ≈ 20 actuators and 50 A power runs.
-* **Surveillance payload 8 g** (now in the model, § 8): the dorsal comms antenna. The surveillance cameras are the
-  head's own forward eyes on the neck gimbal (§ 8.2), so they add no mass. The model's total is ≈ 2.29 kg; the
-  performance tables are still carried at 2.28 kg for continuity.
+* **Surveillance payload 53 g** (now in the model, § 8): ventral EO/IR gimbal turret 45, dorsal comms antenna 8.
+  The model's total is therefore ≈ 2.33 kg; the performance tables are still carried at 2.28 kg for continuity,
+  and the payload sits inside the growth margin.
 * **Battery:** 6S 1300 mAh 45C LiPo, ≈ 29 Wh, ≈ 220 g (≈ 9.6 % of the mass). Moving ≈ 100 g from head or drive
   into battery would buy ≈ 40 % more endurance — the main trade still open.
 * The 30 % growth margin covers the identified +76 g and ≈ 600 g of unidentified growth; at 2.96 kg the wing
@@ -286,7 +286,7 @@ final stage, a comb on P10 and fringed trailing edges. The belt stage remains th
 OWL
 ├─ A_core: P_frame (keel + girdle), P_battery, P_fc, P_vision (+IMU), P_pdu,
 │          P_shell_front, P_shell_rear, P_flank_L/R, P_ventral, J_scapular_L/R → P_scapular_L/R,
-│          P_antenna (comms downlink)   ← surveillance variant; cameras are the head eyes (§ 8)
+│          P_sensorPod (ventral EO/IR turret), P_antenna (comms downlink)   ← surveillance variant (§ 8)
 ├─ A_head: P_neck, J_neckPitch → P_neckCradle, J_neckYaw → A_headUnit
 │    └─ P_headFrame, P_crown, P_face_L/R, P_beak, J_eye_L/R → P_optic_L/R (iris blades K_iris_*, lids J_lid*)
 ├─ A_wing_L/R: P_rootMotor, P_capstan, J_shoulder → P_shoulderHub, P_sectorDrum, P_torsionSpring, P_pitchServo
@@ -317,13 +317,13 @@ has been weighed, hence the 30 % growth margin.
 ## 8. Surveillance payload variant (concept extension)
 
 A perch-and-observe variant, not a carrier: the robot flies in quietly, lands on a vantage point, records or
-streams, and returns. **The surveillance cameras are the head's own forward eyes** (§ 8.2) — the forward-facing
-owl eyes on the two-axis neck gimbal are already a steerable camera pair, so no separate turret is needed, and
-nothing protrudes from the airframe. The one visible payload part the model carries is a dorsal comms blade
-antenna (`P_antenna`, 8 g), in the exploded view. The rest of the variant (recorder, downlink radio, positioning
-and command electronics, and the flat-perch foot) is still unbuilt and is sketched below. Everything here is
-concept-level and unvalidated, and the hardest base-airframe risks (perching landing, unstable-flight control)
-are the ones the surveillance mission leans on hardest.
+streams, and returns. **The 3D model now carries the two visible payload parts** — a ventral gimballed EO/IR
+turret (`P_sensorPod`, 45 g) under the forward belly and a dorsal comms blade antenna (`P_antenna`, 8 g); both
+appear in the exploded view. The rest of the variant (recorder, downlink radio, positioning and command
+electronics, and the flat-perch foot) is still unbuilt and is sketched below. This section sketches what the
+variant adds. Everything here is concept-level and unvalidated,
+and the hardest base-airframe risks (perching landing, unstable-flight control) are the ones the surveillance
+mission leans on hardest.
 
 ### 8.1 Mission and why the owl form fits
 The owl form earns its place only for **covert, quiet, perch-to-watch** observation — flying in without the
@@ -331,18 +331,13 @@ rotor signature of a multirotor, settling on a ledge, and watching from stillnes
 concealed static camera or a hovering multirotor is simpler and more reliable; the flapping owl is justified only
 where the quiet approach and the bird silhouette are the point.
 
-### 8.2 Sensor and aiming — the eyes are the payload
-* **Camera:** the two forward eye optics already modelled (`P_optic_L/R`) serve double duty — navigation vision
-  and surveillance. Spec one as a stabilised EO (day) sensor and the other as low-light/thermal, giving a stereo
-  EO/IR pair. No separate turret: the forward owl eyes are, by design, exactly where a perch-and-watch camera
-  wants to be.
-* **Aiming:** the existing **two-axis neck gimbal** (pitch + yaw) pans and tilts the head to aim the eyes while
-  perched — the same gimbal the idle head-tracking already drives in the app. A roll axis or a small in-eye gimbal
-  would be needed for a level horizon on a tilted perch.
-* **The trade-off of eyes-only:** in flight the head also does navigation and wingbeat stabilisation, so it cannot
-  independently lock onto a separate target while the body maneuvers — the capability a dedicated belly gimbal
-  would add. For perch-and-watch this does not bite; it would only matter for persistent target-staring in flight,
-  at which point a belly gimbal (and its weight and protrusion) could be reconsidered.
+### 8.2 Sensor and aiming
+* **Camera:** upgrade one head optic to a stabilised EO (day) sensor, optionally a second low-light/thermal
+  sensor in the other eye socket. The facial-disc housing already carries two forward optics.
+* **Aiming:** the existing **two-axis neck gimbal** (pitch + yaw) pans and tilts the head while perched, so the
+  "position the camera on exactly what we want" part is the achievable half — it is the same gimbal the idle
+  head-tracking already drives in the app. A roll axis or a small in-eye gimbal would be needed for a level
+  horizon on a tilted perch.
 
 ### 8.3 Getting the imagery back — two options
 * **Record-and-return** (simplest, supported in principle today): add ≈ 3 g of onboard storage; the robot records

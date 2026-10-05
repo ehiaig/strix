@@ -39,7 +39,8 @@ E('OWL')
 E('A_core', (0, 0, 0), parent='OWL')
 for o in [PB.build_frame(), PB.build_battery(), PB.build_fc(), PB.build_vision(), PB.build_pdu()] + PB.build_shells():
     P(o, 'A_core')
-# surveillance payload: the cameras are the head's own eyes; only the comms antenna is a separate part
+# surveillance payload
+P(PB.build_sensor_pod(), 'A_core')
 P(PB.build_antenna(), 'A_core')
 for s in (1, -1):
     with side(s):
@@ -239,7 +240,7 @@ MASS = {
     'P_neck': 20, 'P_neckCradle': 22, 'P_headFrame': 22, 'P_crown': 30, 'P_face_L': 14, 'P_face_R': 14,
     'P_optic_L': 18, 'P_optic_R': 18, 'P_beak': 12,
     'P_tailMount': 12, 'P_tailActuator': 24, 'P_rect': 2.0,
-    'P_antenna': 8,
+    'P_sensorPod': 45, 'P_antenna': 8,
 }
 for s in 'LR':
     MASS.update({f'P_rootMotor_{s}': 150, f'P_capstan_{s}': 28, f'P_shoulderHub_{s}': 40, f'P_sectorDrum_{s}': 14,
@@ -279,7 +280,7 @@ for n, m in rows:
          else 'shells' if any(k in n for k in ('shell', 'flank', 'ventral', 'scapular'))
          else 'landing gear' if any(k in n for k in ('hip', 'leg', 'tarsus', 'foot'))
          else 'tail' if ('tail' in n or 'rect' in n)
-         else 'payload' if 'antenna' in n else 'core')
+         else 'payload' if any(k in n for k in ('sensorPod', 'antenna')) else 'core')
     groups[g] = groups.get(g, 0) + m
 groups['wiring & misc'] = MASS['wiring_misc']
 MOVING = ('P_shoulderHub_L', 'P_sectorDrum_L', 'P_pitchServo_L', 'P_humerus_L', 'P_humFairing_L', 'P_foldActuator_L', 'P_foldRod_L',

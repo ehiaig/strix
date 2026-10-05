@@ -1,0 +1,912 @@
+# MASTER PROMPT: Build a Photorealistic, Interactive 3D Biomimetic Owl Robot
+
+## YOUR ROLE
+
+You are an elite multidisciplinary team consisting of:
+
+1. **Senior Robotics Engineer** — specialising in biomimetic flying robots, ornithopters, flight dynamics, propulsion, and mechanical engineering.
+2. **Aerospace Engineer** — specialising in aerodynamic design, lightweight structures, and flight stability.
+3. **Industrial Designer** — capable of producing extraordinary hardware designs comparable to the best work from DJI, Apple, Tesla, and advanced robotics research laboratories.
+4. **3D Technical Artist** — specialising in realistic hard-surface modelling, physically based materials, cinematic lighting, and mechanical animation.
+5. **Creative WebGL Engineer** — an expert in Three.js, React Three Fiber, GLSL, procedural geometry, skeletal animation, and interactive 3D experiences.
+6. **Creative Director and Design Critic** — responsible for achieving world-class visual quality and coherence.
+
+Your assignment is to **design, model, animate, and implement an extraordinary, photorealistic, mechanically plausible, owl-shaped flying robot**, presented in a premium interactive web experience.
+
+The result must be an actual working HTML-based 3D application, not a static illustration, prerecorded video, concept image, or mockup.
+
+The user must be able to examine the robot from different perspectives, disassemble it into its individual mechanical components, reassemble it, and watch it fly.
+
+The visual quality should resemble a cinematic product reveal of a next-generation aerospace prototype.
+
+**Do not settle for a generic low-poly bird, a stylised toy, or an ordinary robot with decorative wings.**
+
+---
+
+# STAGE 1 — ENGINEER THE ROBOT
+
+Before implementing the visual experience, design the robot as a credible physical flying machine.
+
+## 1.1 Design philosophy
+
+The robot should be inspired by a real owl, retaining its distinctive biological characteristics:
+
+- Broad, powerful wings.
+- Large, rounded head.
+- Forward-facing eyes.
+- Compact, aerodynamic torso.
+- Short neck.
+- Fan-shaped tail.
+- Articulated wing feathers.
+- Elegant, naturally balanced proportions.
+- Distinctive owl facial disc and brow silhouette.
+
+However, every feature should be reinterpreted as an advanced robotic system.
+
+The robot should look like something that could plausibly be manufactured, assembled, tested, and flown.
+
+Avoid making it look like a conventional drone with an owl-shaped casing.
+
+**Primary flight concept:**
+
+Use an electrically powered flapping-wing ornithopter architecture, with articulated wings providing lift and thrust.
+
+Use a coherent flight mechanism consisting of:
+
+- A lightweight central load-bearing fuselage.
+- Dual wing-root actuator assemblies.
+- Mechanical transmission or direct-drive systems.
+- Articulated wing spars.
+- Lightweight aerodynamic wing membranes or overlapping feather-like aerodynamic panels.
+- Controlled wing twisting and feather articulation.
+- An active tail for pitch and directional control.
+- Battery modules.
+- Flight control electronics.
+- Inertial sensors.
+- Power distribution systems.
+- Cooling and structural reinforcement where necessary.
+
+Make a deliberate engineering choice between crank-driven flapping and independent actuator-driven wings. Use that decision consistently throughout the model and animations.
+
+The robot should have a believable centre of mass, wing loading, and mechanical range of motion.
+
+Do not invent arbitrary mechanical joints that serve no purpose.
+
+### Important engineering constraint
+
+This is a concept-level engineering visualisation, not a certified aircraft design.
+
+Do not imply that the robot has been aerodynamically validated or is guaranteed to fly.
+
+Where engineering parameters are uncertain, state the assumptions and distinguish visual approximations from validated physics.
+
+---
+
+# STAGE 2 — DESIGN THE OWL
+
+## 2.1 Visual identity
+
+Create a striking, sophisticated, premium aerospace aesthetic.
+
+The design should combine:
+
+- Advanced aerospace engineering.
+- Biomimetic robotics.
+- Precision mechanical manufacturing.
+- Natural owl anatomy.
+- Restrained futuristic industrial design.
+
+### Materials
+
+Use a carefully controlled palette:
+
+**Primary surfaces**
+- Brushed titanium.
+- Dark graphite.
+- Satin ceramic.
+- Lightweight carbon-fibre composites.
+
+**Secondary surfaces**
+- Exposed aluminium mechanisms.
+- Precision-machined joints.
+- Dark flexible membranes.
+- Thin aerodynamic composite panels.
+
+**Accents**
+- Subtle amber illumination.
+- Warm gold optical elements.
+- Small illuminated status indicators.
+
+Avoid excessive neon lighting, glowing circuit patterns, and generic sci-fi ornamentation.
+
+The design should be beautiful because of its shape, engineering, material quality, and mechanical precision.
+
+## 2.2 Head and eyes
+
+Design a recognisable robotic owl head.
+
+Include:
+
+- Two forward-facing optical sensor assemblies.
+- Realistic glass lens surfaces.
+- Visible internal lens elements.
+- Mechanical eyelid or protective iris mechanisms.
+- A distinctive owl facial disc.
+- Subtle feather-inspired layered composite plates.
+- A precision-designed beak-shaped sensor housing.
+- A compact neck articulation mechanism.
+
+The eyes should be particularly impressive.
+
+They should resemble advanced camera optics rather than cartoon eyes.
+
+Allow subtle autonomous eye movement and head tracking while the robot is idle.
+
+## 2.3 Wings
+
+**The wings are the most important mechanical and visual feature.**
+
+They must be convincingly engineered for flapping flight.
+
+Each wing should contain:
+
+1. Structural wing-root attachment.
+2. Primary flapping joint.
+3. Main load-bearing wing spar.
+4. Secondary articulated spar.
+5. Wing folding mechanism.
+6. Pitch/twist control mechanism.
+7. Aerodynamic feather-like surfaces.
+8. Distinct primary and secondary feather assemblies.
+9. Visible hinge points and actuator linkages.
+10. Lightweight internal reinforcement.
+
+Feather-like panels should overlap in an aerodynamically meaningful way.
+
+Their motion should be coordinated rather than random.
+
+During the downstroke, the wings should present an effective lifting surface.
+
+During the upstroke, wing geometry and feather articulation should change in a plausible way to manage aerodynamic loads.
+
+The wing mechanism must support repeated flapping without obvious mesh intersections, impossible rotations, or disconnected structures.
+
+Use mirrored structural logic for left and right wings, with appropriate phase control.
+
+## 2.4 Torso
+
+The torso should house the principal flight systems.
+
+Include:
+
+- Central structural frame.
+- Flight controller.
+- Battery pack.
+- Power distribution.
+- Motor controllers.
+- Wing actuation system.
+- Sensor processing modules.
+- Structural mounting brackets.
+- Removable protective shell panels.
+
+Design the external shell so that its components can be detached individually, exposing the internal systems.
+
+## 2.5 Tail and legs
+
+Include an articulated tail with individually identifiable aerodynamic panels.
+
+The tail should respond during flight with subtle pitch and directional adjustments.
+
+Include compact retractable or foldable landing legs with realistic joints and gripping feet.
+
+The legs must be capable of supporting the robot while landed, even though the primary showcase presents it hovering in a controlled demonstration.
+
+---
+
+# STAGE 3 — DESIGN FOR DISASSEMBLY
+
+The entire owl must be modelled as a hierarchical mechanical assembly.
+
+**Do not create one monolithic bird mesh.**
+
+Every major component must exist as a separate object or object group with a meaningful parent-child relationship.
+
+At minimum, the robot must have the following identifiable assemblies:
+
+### Core
+- Central frame.
+- Front fuselage shell.
+- Rear fuselage shell.
+- Battery.
+- Flight controller.
+- Power distribution module.
+
+### Head
+- Head structural frame.
+- Left facial shell.
+- Right facial shell.
+- Left optical assembly.
+- Right optical assembly.
+- Beak sensor housing.
+- Neck articulation assembly.
+
+### Left wing
+- Wing-root motor.
+- Wing-root gearbox or transmission.
+- Primary wing spar.
+- Secondary wing spar.
+- Wing articulation mechanism.
+- Aerodynamic membrane sections.
+- Individual feather groups.
+
+### Right wing
+- Mirrored equivalent of the left wing.
+
+### Tail
+- Tail support structure.
+- Tail control actuator.
+- Individual tail feather panels.
+
+### Landing system
+- Left leg assembly.
+- Right leg assembly.
+- Feet and gripping mechanisms.
+
+Add appropriate fasteners, bearings, mounting points, and connector details.
+
+Use instancing where possible for repeated components such as bolts and feathers.
+
+## 3.1 Assembly architecture
+
+Every component must have:
+
+- A unique identifier.
+- A parent assembly.
+- An assembled position.
+- An assembled orientation.
+- A detached position.
+- A detached orientation.
+- A local pivot or attachment reference.
+- Material properties.
+- Optional component metadata.
+
+Maintain a consistent local coordinate system and hierarchy.
+
+**Critical:** Define detachable offsets relative to each component's correct assembly frame. Ensure that animated wings, articulated feathers, and nested joints can return to their exact assembled transforms.
+
+The detached layout should be an engineering exploded view, not a random particle explosion.
+
+---
+
+# STAGE 4 — BUILD THE INTERACTIVE WEBSITE
+
+Create a fully working web application using:
+
+- React.
+- TypeScript.
+- Three.js.
+- React Three Fiber.
+- Drei.
+- GSAP or a similarly reliable animation system.
+- WebGL-based physically based rendering.
+
+Use Vite or another lightweight modern build system.
+
+Deliver an application that runs locally in a browser.
+
+## 4.1 Initial scene
+
+On page load, the user should see the complete assembled robotic owl.
+
+It should be suspended in a neutral, premium product-showcase environment.
+
+Use:
+
+- A sophisticated off-white, light-grey, or restrained dark studio background, selected for the best material contrast.
+- Cinematic three-point lighting.
+- Soft contact and ambient shadows.
+- Subtle environmental reflections.
+- Carefully controlled exposure.
+- High-quality antialiasing.
+- Realistic metallic reflections.
+- Subtle ambient motion.
+
+The robot should be large and prominent, occupying approximately 60–75% of the main visual area on desktop.
+
+It should appear extraordinarily detailed.
+
+Do not clutter the page with cards, dashboards, unnecessary metrics, or marketing sections.
+
+This is an interactive product showcase, not a SaaS landing page.
+
+## 4.2 Camera controls
+
+Allow the user to:
+
+- Rotate around the robot using mouse dragging.
+- Zoom using the mouse wheel.
+- Pan where appropriate.
+- Examine the robot from above, below, front, back, and both sides.
+
+Use smooth camera damping.
+
+Prevent camera clipping and awkward zoom distances.
+
+Add a discreet reset-view control if useful.
+
+## 4.3 Main controls
+
+Place three beautifully designed buttons at the bottom centre of the screen:
+
+**DETACH**
+
+**ASSEMBLE**
+
+**FLY**
+
+These three buttons are the primary interface.
+
+Their behaviour must be fully implemented.
+
+Do not create nonfunctional controls.
+
+---
+
+# STAGE 5 — DETACH INTERACTION
+
+When the user clicks **DETACH**, the robot should disassemble into an elegant engineering exploded view.
+
+## 5.1 Behaviour
+
+The sequence should:
+
+1. Stop any flight animation safely.
+2. Return the wings and tail to a known neutral pose.
+3. Stabilise the robot in the centre of the viewport.
+4. Unlock the outer shell panels.
+5. Move the head components into an exploded arrangement.
+6. Separate the wings into identifiable mechanical assemblies.
+7. Expose the motors, actuators, and transmission components.
+8. Separate the fuselage panels from the internal structure.
+9. Reveal the battery and flight controller.
+10. Separate the tail and landing assemblies.
+11. Settle all components into an organised exploded view.
+
+Use smooth, coordinated, carefully staggered animation.
+
+Every component should move along a deliberate path.
+
+The exploded view should preserve the owl's overall silhouette and clearly communicate where every component belongs.
+
+The result should resemble an interactive CAD assembly demonstration or premium industrial product teardown.
+
+## 5.2 Exploded-view composition
+
+Components should separate far enough that the user can understand their relationships, but not so far that they become disconnected visually.
+
+Use:
+
+- Layered radial displacement.
+- Directional offsets along assembly axes.
+- Small, purposeful rotations.
+- Mechanical easing.
+- Staggered timing.
+
+Avoid:
+
+- Random scattering.
+- Excessive spinning.
+- Particle-like movement.
+- Chaotic overlaps.
+- Parts moving through each other.
+
+Automatically adjust the camera framing so the entire exploded assembly remains visible.
+
+Optionally display discreet labels for important parts.
+
+Labels must not obscure the geometry.
+
+## 5.3 Interaction
+
+The user must be able to rotate and inspect the exploded assembly.
+
+If practical, hovering or clicking a component should reveal its name and function.
+
+For example:
+
+**Wing Root Actuator**
+
+*Provides the primary oscillating motion that drives the wing flapping mechanism.*
+
+Use subtle highlighting rather than exaggerated glowing outlines.
+
+---
+
+# STAGE 6 — ASSEMBLE INTERACTION
+
+When the user clicks **ASSEMBLE**, the robot should reassemble.
+
+The process must feel mechanically precise.
+
+## 6.1 Behaviour
+
+Components should return to their exact attachment points.
+
+The assembly sequence should follow a believable order:
+
+1. Structural frame stabilises.
+2. Flight control electronics and battery return.
+3. Wing actuation systems connect.
+4. Wing spars attach.
+5. Feather and membrane assemblies align.
+6. Tail and landing mechanisms attach.
+7. Head sensor assemblies reconnect.
+8. Outer protective panels close.
+9. Final fasteners and covers settle.
+10. The complete owl returns to its neutral showcase pose.
+
+Use smooth, synchronised transitions.
+
+There must be no visible snapping, teleportation, or permanent misalignment.
+
+The final model must be identical to its original assembled configuration.
+
+## 6.2 Reversibility
+
+The user should be able to click:
+
+DETACH → ASSEMBLE → DETACH → ASSEMBLE
+
+repeatedly without animation drift, geometry deformation, or state corruption.
+
+Handle clicks during transitions gracefully.
+
+Either queue the next transition or smoothly reverse the current animation.
+
+Never allow duplicate animation loops to accumulate.
+
+---
+
+# STAGE 7 — FLY INTERACTION
+
+When the user clicks **FLY**, the assembled owl should perform a convincing flying demonstration.
+
+This must be the most impressive interaction.
+
+## 7.1 Preconditions
+
+If the owl is detached, automatically assemble it first.
+
+Only begin flight after assembly is complete.
+
+## 7.2 Takeoff
+
+Begin with a subtle preparation sequence:
+
+- The head stabilises.
+- The wings unfold to their operational configuration.
+- The tail adjusts.
+- The wing-root motors begin moving.
+- The first wingbeats are slow and deliberate.
+- The wingbeat frequency increases.
+- The robot begins to rise.
+
+The motion should communicate mechanical weight, inertia, and aerodynamic force.
+
+Avoid making the robot rise before the wing motion plausibly supports it.
+
+## 7.3 Wingbeat mechanics
+
+Create a believable flapping cycle.
+
+Model the cycle using coordinated transformations:
+
+**Downstroke**
+- Wings sweep downward.
+- Wing surfaces maintain a lifting orientation.
+- Feather groups align to form an effective aerodynamic surface.
+- The body responds subtly to the resulting forces.
+
+**Upstroke**
+- Wings recover upward.
+- Wing pitch changes.
+- Feather articulation reduces unwanted aerodynamic resistance where appropriate.
+- The body maintains controlled stability.
+
+**Transition**
+- Wing acceleration and deceleration are smooth.
+- Mechanical joints remain aligned.
+- The wings do not penetrate the torso.
+- Feather movement follows the structural motion.
+
+Use anatomically inspired owl wing kinematics, adapted to the chosen mechanical architecture.
+
+Do not animate the wings as rigid flat panels attached to simple hinges.
+
+Wingbeat frequency, amplitude, pitch, and feather articulation must be adjustable in code.
+
+Choose plausible parameters based on the robot's assumed scale and mass.
+
+Avoid claiming physically accurate flight solely because the animation looks convincing.
+
+## 7.4 Flight trajectory
+
+Once airborne, the owl should perform a cinematic but controlled flight sequence.
+
+For example:
+
+1. Rise into a stable hover-like demonstration.
+2. Fly forward.
+3. Perform a gentle banking turn.
+4. Cross the viewing area.
+5. Turn back toward the camera.
+6. Spread its wings in a graceful gliding moment.
+7. Resume flapping.
+8. Return to the original central position.
+
+Maintain smooth trajectories.
+
+The bird should not fly offscreen unexpectedly.
+
+Use camera tracking where necessary to preserve visibility.
+
+### Flight realism constraint
+
+An ornithopter may not be capable of stationary hovering with the chosen wing configuration.
+
+If sustained hover is not mechanically credible, use a slow forward-flight demonstration or a brief supported launch sequence instead.
+
+Prioritise plausibility over dramatic but impossible movement.
+
+## 7.5 Secondary animations
+
+During flight, include:
+
+- Subtle head stabilisation.
+- Small tail corrections.
+- Appropriate body pitch.
+- Banking roll.
+- Coordinated wing twisting.
+- Natural feather movement.
+- Mechanical joint articulation.
+
+Avoid excessive bobbing and cartoon-like motion.
+
+The bird must look engineered and controlled.
+
+## 7.6 End of flight
+
+The flight animation should conclude gracefully.
+
+The owl should return to its original presentation position and settle into its assembled idle pose.
+
+The FLY button should work repeatedly.
+
+---
+
+# STAGE 8 — VISUAL QUALITY AND RENDERING
+
+The final scene must meet a high-end cinematic standard.
+
+## 8.1 Geometry
+
+Use detailed geometry with appropriate bevels and edge highlights.
+
+Include:
+
+- Machined seams.
+- Panel gaps.
+- Recessed screws.
+- Bearing housings.
+- Mechanical couplings.
+- Carbon-fibre surface details.
+- Optical lens assemblies.
+- Aerodynamic feather structures.
+
+Do not fake important components with flat textures.
+
+Mechanical parts that are exposed during disassembly must have meaningful 3D geometry.
+
+## 8.2 Materials
+
+Use physically based rendering.
+
+Pay attention to:
+
+- Metalness.
+- Roughness.
+- Clearcoat.
+- Normal maps.
+- Surface anisotropy where supported.
+- Environmental reflections.
+- Lens transparency.
+- Appropriate material thickness.
+
+Avoid making every surface uniformly glossy.
+
+## 8.3 Lighting
+
+Use a restrained studio-lighting arrangement with excellent silhouette separation.
+
+Important mechanical details should remain visible even on dark surfaces.
+
+Avoid excessive bloom, crushed shadows, or overexposed highlights.
+
+## 8.4 Animation quality
+
+Target smooth rendering and stable frame pacing.
+
+Animations should be:
+
+- Continuous.
+- Mechanically coordinated.
+- Reversible.
+- Deterministic where possible.
+- Free of obvious intersections.
+- Visually consistent across all states.
+
+---
+
+# STAGE 9 — IMPLEMENTATION ARCHITECTURE
+
+Organise the application into maintainable components.
+
+Suggested structure:
+
+- `RobotOwl` — complete model hierarchy.
+- `HeadAssembly` — head, optics, and neck.
+- `WingAssembly` — reusable left/right wing implementation.
+- `WingMechanism` — actuator and articulation.
+- `FeatherAssembly` — aerodynamic feather panels.
+- `FuselageAssembly` — structural core and shell.
+- `TailAssembly` — tail control surfaces.
+- `LandingGear` — legs and feet.
+- `AssemblyController` — detach and assemble transitions.
+- `FlightController` — flight animation and wingbeat timing.
+- `CameraController` — camera transitions and orbit interaction.
+- `Environment` — lighting, background, and reflections.
+- `ControlPanel` — user controls.
+
+Use a central finite-state machine.
+
+Suggested states:
+
+- `ASSEMBLED`
+- `DETACHING`
+- `DETACHED`
+- `ASSEMBLING`
+- `TAKING_OFF`
+- `FLYING`
+- `LANDING`
+
+Do not rely on scattered Boolean variables to coordinate complex transitions.
+
+## 9.1 Transformation management
+
+Store canonical assembled transforms for every detachable component.
+
+Store exploded transforms separately.
+
+Use local coordinates for joints and articulated structures.
+
+During flight, apply wingbeat and flight motion through dedicated parent groups rather than permanently modifying the canonical assembly transforms.
+
+When returning from flight or disassembly, ensure all joints and components restore their correct positions.
+
+## 9.2 Performance
+
+Optimise the scene without sacrificing visible quality.
+
+Use:
+
+- Instanced meshes for repeated parts.
+- Shared geometries and materials.
+- Appropriate shadow settings.
+- Adaptive rendering quality.
+- Efficient animation updates.
+- Correct resource cleanup.
+- Reduced unnecessary React rerenders.
+
+Target 60 FPS on a capable desktop GPU, with graceful degradation on weaker devices.
+
+Ensure the scene remains usable on mobile screens.
+
+---
+
+# STAGE 10 — VISUAL CRITIC AND ITERATIVE REFINEMENT
+
+Do not stop after the first implementation.
+
+Treat the first version as a prototype.
+
+Use a visual evaluation loop to improve the design.
+
+If a Fable 5 subagent is available, use it as an independent design critic.
+
+Otherwise, use the strongest available vision-capable model in a fresh context.
+
+## Evaluation procedure
+
+At every iteration:
+
+1. Run the application.
+2. Capture screenshots of the actual rendered output.
+3. Capture at least the following states:
+   - Fully assembled, front three-quarter view.
+   - Side profile.
+   - Rear view.
+   - Fully detached exploded view.
+   - Mid-flight, wings extended.
+   - Mid-flight, wings partially folded.
+4. Provide the screenshots to the critic.
+5. Do not provide the critic with the source code, implementation details, or previous critiques.
+6. Ask the critic to evaluate the design independently.
+
+### Critic instructions
+
+Evaluate the visual result against the standard of a world-class robotics product visualisation studio.
+
+Assess:
+
+- Overall aesthetic sophistication.
+- Recognisability as an owl.
+- Mechanical credibility.
+- Wing engineering and articulation.
+- Quality of internal components.
+- Material realism.
+- Geometry and manufacturing detail.
+- Lighting and composition.
+- Exploded-view clarity.
+- Flight animation plausibility.
+- Distinctiveness and originality.
+- Signs of generic or obviously AI-generated design.
+
+Be bold, critical, and specific.
+
+Do not reward complexity for its own sake.
+
+Identify the five most important improvements.
+
+Provide a score from 1 to 10 indicating how closely the design approaches world-class professional quality.
+
+### Independent engineering review
+
+Separately, perform an engineering critique.
+
+Look for:
+
+- Unsupported structures.
+- Impossible joints.
+- Wing collisions.
+- Incorrect actuator placement.
+- Unrealistic load paths.
+- Implausible centre of mass.
+- Aerodynamic inconsistencies.
+- Mechanical components that cannot actually connect.
+- Flight animation that contradicts the mechanical design.
+
+The engineering critic should also provide a score out of 10.
+
+### Refinement loop
+
+Implement the highest-impact improvements.
+
+Capture new screenshots and repeat.
+
+Continue until both visual and engineering critiques reach at least 9/10, or until further meaningful improvements are blocked by a concrete technical limitation.
+
+Do not tell the critic that 9/10 is the target.
+
+Do not fabricate scores or claim that screenshots were inspected if the tools are unavailable.
+
+---
+
+# STAGE 11 — FUNCTIONAL TESTING
+
+Test the application in a real browser.
+
+Verify:
+
+1. The owl renders successfully.
+2. Camera rotation works.
+3. Zoom works.
+4. DETACH separates all intended components.
+5. Components remain visible and inspectable.
+6. ASSEMBLE restores exact component positions.
+7. FLY produces actual articulated wing motion.
+8. The flight trajectory remains visible.
+9. Repeated button clicks do not break the scene.
+10. Clicking FLY while detached assembles the robot first.
+11. Transition interruptions are handled safely.
+12. No significant mesh intersections occur.
+13. There are no uncaught browser errors.
+14. The application works after a fresh page reload.
+15. Rendering performance remains acceptable.
+
+Capture screenshots and, if supported, a recording of the flight animation for final review.
+
+Do not claim successful testing unless the relevant test was actually performed.
+
+---
+
+# STAGE 12 — FINAL DELIVERABLE
+
+Deliver a complete working interactive website.
+
+It must include:
+
+- A beautifully modelled 3D owl-shaped flying robot.
+- Detailed internal mechanical components.
+- A coherent hierarchical assembly structure.
+- Realistic articulated wings.
+- Three working buttons: DETACH, ASSEMBLE, FLY.
+- An elegant exploded-view animation.
+- Precise reassembly.
+- A cinematic flying demonstration.
+- Interactive camera controls.
+- High-quality lighting and materials.
+- Responsive layout.
+- Maintainable source code.
+
+Include a README explaining:
+
+- How to install dependencies.
+- How to start the development server.
+- How to build for production.
+- How the assembly hierarchy works.
+- How wing animations are implemented.
+- Which mechanical assumptions were made.
+- Which aspects of the design remain unvalidated.
+
+If external 3D modelling tools, procedural generation, Blender, CAD tools, or model-generation services are available, use them where they materially improve geometric quality.
+
+Do not artificially restrict yourself to simple primitive shapes.
+
+The final model should contain enough geometric detail to support close inspection and convincing disassembly.
+
+Do not substitute image-generation or video-generation outputs for the actual 3D geometry.
+
+Images may be used as visual references and videos as animation references, but the deliverable must remain a genuine real-time 3D scene.
+
+---
+
+# NON-NEGOTIABLE QUALITY BAR
+
+The result must not look like:
+
+- A low-poly owl.
+- A cartoon bird.
+- A toy drone.
+- A generic sci-fi animal.
+- A simple mesh with wings rotating up and down.
+- A static model with fake exploded-view effects.
+- A prerecorded animation masquerading as an interactive experience.
+
+It must look like a serious next-generation robotics prototype.
+
+The wings must be mechanically meaningful.
+
+The internal structure must be credible.
+
+The disassembly must reveal how the robot is constructed.
+
+The assembly must be precise.
+
+The flight must demonstrate the intended mechanical system.
+
+The visual presentation must be exceptional.
+
+**Prioritise actual implementation quality over explanations or impressive-sounding descriptions.**
+
+Begin by establishing the mechanical architecture and component hierarchy, then implement the 3D model, interactive assembly states, flight animation, and visual refinement.
+
+Work through the stages without asking for approval after every step unless an essential design decision genuinely requires clarification.
+
+The final objective is simple:
+
+**Build the most convincing interactive 3D demonstration of an advanced biomimetic robotic owl that you can achieve with the available tools.**
+Guidelines:
+1. Use actual mechanical references: study real ornithopter mechanisms, wing-root actuators, and feather articulation before generating geometry.
+2. Prioritise the exploded view: Each detached part should reveal its purpose, connections, and relationship to the whole robot—not simply float apart.
+
+3. Avoid purely procedural geometry for everything: use Blender-generated GLB assets, with Three.js handling assembly, flight, and camera interactions.

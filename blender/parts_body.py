@@ -407,8 +407,41 @@ def build_pdu():
 
 
 # --------------------------------------------------------------------- surveillance payload
-# The surveillance cameras are the head's own forward eyes on the neck gimbal (see parts_head.build_optic);
-# the only separate payload part is the comms antenna below.
+def build_sensor_pod():
+    """Ventral gimballed EO/IR surveillance turret under the forward belly, aimed forward and down.
+    This is the dedicated payload camera (the head cameras are for navigation); it steers on two axes
+    and carries onboard recording."""
+    bp = body_pt(0.30, -90.0)
+    cx, cy, cz = 0.0, float(bp.y), float(bp.z)
+    p = []
+    # faired mount collar onto the belly
+    p.append(lathe_obj('sp_mount', [(0.0, 0.004), (0.020, 0.004), (0.022, 0.0), (0.020, -0.006), (0.013, -0.012)],
+                       nseg=30, center=(cx, cy, cz + 0.004), m='graphite_satin'))
+    # gimbal outer ring (yaw bearing)
+    p.append(lathe_obj('sp_ring', cyl_profile(0.019, -0.016, -0.006, r_in=0.015),
+                       nseg=30, center=(cx, cy, cz), m='alu_dark'))
+    # sensor ball
+    R = 0.016
+    bc = V((cx, cy, cz - 0.026))
+    prof = [(R * math.cos(a), R * math.sin(a)) for a in np.linspace(-math.pi / 2, math.pi / 2, 13)]
+    p.append(lathe_obj('sp_ball', prof, nseg=30, center=bc, m='graphite'))
+    # trunnion pins (pitch axis, along X)
+    for sgn in (1, -1):
+        p.append(cyl_obj(f'sp_trn{sgn}', bc + V((sgn * 0.015, 0, 0.004)), bc + V((sgn * 0.021, 0, 0.004)), 0.0022, m='alu_dark', nseg=12))
+    # optical axis: forward (-Y) and down (-Z)
+    d = V((0, -1, -0.55)).normalized()
+    p.append(cyl_obj('sp_bezel', bc + d * (R - 0.004), bc + d * (R + 0.004), 0.0105, m='alu_dark', nseg=30))
+    p.append(cyl_obj('sp_lens', bc + d * (R - 0.001), bc + d * (R + 0.0035), 0.0092, m='glass', nseg=30))
+    p.append(cyl_obj('sp_lens_in', bc + d * (R - 0.004), bc + d * (R - 0.001), 0.0075, m='lens_inner', nseg=24))
+    # secondary (thermal) aperture, offset along X
+    o2 = V((0.011, 0, 0))
+    p.append(cyl_obj('sp_ir', bc + o2 + d * (R - 0.002), bc + o2 + d * (R + 0.003), 0.0040, m='lens_inner', nseg=16))
+    # status pip on the housing
+    p.append(cyl_obj('sp_led', (cx + 0.012, cy - 0.004, cz - 0.004), (cx + 0.0132, cy - 0.006, cz - 0.004), 0.0016, m='amber', nseg=10))
+    o = join(p, 'P_sensorPod')
+    return finalize(o, origin=(cx, cy, cz), uv_scale=70)
+
+
 def build_antenna():
     """Dorsal comms blade antenna on the rear upper fuselage: command uplink and video/telemetry downlink."""
     bp = body_pt(0.62, 90.0)

@@ -1,18 +1,18 @@
 {
- "mass_g": 2288.8,
+ "mass_g": 2333.8,
  "cg_blender": [
   -0.0002,
-  -0.0186,
-  -0.0028
+  -0.0193,
+  -0.0051
  ],
  "planform_area_m2": 0.3706,
  "span_m": 1.443,
- "wing_loading_N_m2": 60.6,
+ "wing_loading_N_m2": 61.8,
  "aspect_ratio": 5.62,
  "wing_only_area_m2": 0.3177,
- "wing_loading_wing_only_N_m2": 70.7,
- "cg_below_stroke_axis_mm": 26.4,
- "cg_behind_stroke_axis_mm": 22.7,
+ "wing_loading_wing_only_N_m2": 72.1,
+ "cg_below_stroke_axis_mm": 28.7,
+ "cg_behind_stroke_axis_mm": 22.0,
  "shoulder_axis_blender": [
   0.085,
   -0.0413,
@@ -33,10 +33,10 @@
   "shells": 168,
   "wiring & misc": 90,
   "tail": 60.0,
-  "payload": 8
+  "payload": 53
  },
- "objects": 301,
- "build_s": 29.5,
+ "objects": 302,
+ "build_s": 30.7,
  "inverted_islands_fixed": 219,
- "triangles": 672000
+ "triangles": 674302
 }

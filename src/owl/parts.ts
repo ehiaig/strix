@@ -101,9 +101,13 @@ one('P_pdu', { d: [0, -0.07, -0.08], detach: 2.15, assemble: 0.25, lead: true },
 })
 
 // ----------------------------------------------------------------- surveillance payload
+one('P_sensorPod', { dl: [0, -0.2, 0.02], detach: 1.95, assemble: 0.28, dur: 1.0, lead: true }, {
+  title: 'Ventral Sensor Turret', group: 'Surveillance',
+  fn: 'Two-axis gimballed day (EO) and thermal (IR) camera under the forward belly, with onboard recording. The head cameras are for navigation; this turret is the dedicated surveillance payload — steered independently, stabilised against the wingbeat, and aimed forward and down.',
+})
 one('P_antenna', { dl: [0, 0.22, -0.02], detach: 1.95, assemble: 0.28, dur: 1.0, lead: true }, {
   title: 'Comms / Downlink Antenna', group: 'Surveillance',
-  fn: 'Dorsal blade antenna for the command uplink and the video/telemetry downlink. The robot records and returns without it; with a link it streams a live or burst preview. The surveillance cameras are the head’s own forward eyes (see the Optical Assembly).',
+  fn: 'Dorsal blade antenna for the command uplink and the video/telemetry downlink. The robot records and returns without it; with a link it streams a live or burst preview.',
 })
 
 // ----------------------------------------------------------------- head (forward along the neck)
@@ -129,7 +133,7 @@ both('P_face_{s}', { d: [0.055, 0.06, 0.36], release: [0.004, 0, 0.008], detach:
 })
 both('P_optic_{s}', { d: [0.03, 0.065, 0.46], detach: 0.9, assemble: 1.95, lead: true }, {
   title: '{side} Optical Assembly', group: 'Head',
-  fn: 'Forward-facing camera on the two-axis neck gimbal: domed front element, two internal lens groups, 9-blade iris and protective shutter lids. This pair is both the navigation vision and the surveillance payload — one channel day (EO), the other low-light/thermal — aimed by panning and tilting the head.',
+  fn: 'Forward-facing camera: domed front element, two internal lens groups, 9-blade iris and protective shutter lids.',
 })
 one('P_beak', { d: [0, 0.02, 0.42], detach: 0.85, assemble: 1.95, lead: true }, {
   title: 'Beak Sensor Housing', group: 'Head', fn: 'Hooked ceramic housing for a short-range time-of-flight sensor used for landing.',
