@@ -1,0 +1,5 @@
+node_modules/
+dist/
+dist-hosted/
+__pycache__/
+blender/owl_raw.glb

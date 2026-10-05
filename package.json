@@ -1,0 +1,34 @@
+{
+  "name": "strix-01-owl",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "model": "python3 blender/build_owl.py -- blender/owl_raw.glb blender/build_report.json && npx gltfpack -i blender/owl_raw.glb -o src/assets/strix.glb -cc -kn -km -kv -vpf -vn 10 -vtf && npx gltfpack -i blender/owl_raw.glb -o src/assets/strix-plain.glb -kn -km -kv -vpf -vn 10 -vtf -si 0.6 && rm blender/owl_raw.glb",
+    "build:hosted": "tsc --noEmit && VITE_GLB_FALLBACK=strix-plain.glb VITE_GLB_JSON=1 vite build --outDir dist-hosted && cp src/assets/strix-plain.glb dist-hosted/assets/ && node tools/embed-glb.mjs dist-hosted/assets",
+    "test": "python3 tests/functional.py"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "@react-three/postprocessing": "^2.19.1",
+    "gsap": "^3.15.0",
+    "postprocessing": "^6.39.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.180.0",
+    "three-stdlib": "^2.36.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@types/three": "^0.180.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "gltfpack": "^1.3.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.3"
+  }
+}

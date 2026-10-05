@@ -1,0 +1,102 @@
+{
+ "base": "http://127.0.0.1:5173/",
+ "results": [
+  {
+   "id": 1,
+   "name": "Loads; GLB hierarchy present; no console errors",
+   "pass": true,
+   "detail": "ready in 27.8s (software GL); 131 P_ parts, 54 joints; missing=[]; errors=[]"
+  },
+  {
+   "id": 2,
+   "name": "Initial state ASSEMBLED with correct button enablement",
+   "pass": true,
+   "detail": "state=ASSEMBLED disabled={'DETACH': False, 'ASSEMBLE': True, 'FLY': False}"
+  },
+  {
+   "id": 3,
+   "name": "Camera orbit, zoom, pan and reset (mouse + reset button)",
+   "pass": true,
+   "detail": "drag moved camera 1.415 m; wheel distance 1.30->1.35 m; right-drag panned 0.065 m (view direction change 0.0000); reset lands 0.0 mm from the default view"
+  },
+  {
+   "id": 4,
+   "name": "DETACH: staged explode to DETACHED with labelled exploded view",
+   "pass": true,
+   "detail": "click->DETACHING; DETACHED after 4.85s sim; progress=1.000; max part travel 0.36 m; 11 visible callouts; disabled={'DETACH': True, 'ASSEMBLE': False, 'FLY': False}"
+  },
+  {
+   "id": 5,
+   "name": "ASSEMBLE: returns to ASSEMBLED with exact restoration",
+   "pass": true,
+   "detail": "click->ASSEMBLING; ASSEMBLED after 4.90s sim; part deviation dp=0.00e+00 m dq=5.96e-08 rad; 249 nodes vs load snapshot: dp=4.72e-16 m dq=4.21e-08 rad"
+  },
+  {
+   "id": 6,
+   "name": "Six DETACH/ASSEMBLE cycles (keyboard D/A): no drift",
+   "pass": true,
+   "detail": "worst node error after any cycle: 4.72e-16 m, 4.21e-08 rad"
+  },
+  {
+   "id": 7,
+   "name": "Interrupts: ASSEMBLE mid-detach, DETACH mid-assemble, ASSEMBLE again",
+   "pass": true,
+   "detail": "states ['DETACHING', 'ASSEMBLING', 'DETACHING', 'ASSEMBLING']; progress at interrupts 0.51, 0.25; settled ASSEMBLED after 2.98s; node error 4.7e-16 m / 4.2e-08 rad"
+  },
+  {
+   "id": 8,
+   "name": "FLY: take-off, flight, landing, back on the perch",
+   "pass": true,
+   "detail": "states ['TAKING_OFF', 'FLYING', 'LANDING', 'ASSEMBLED']; phases ['prep', 'launch', 'cruise', 'glide', 'approach', 'settle']; 29.6s sim; max step 0.115 m/frame (no teleports); lowest root height 1.01 m; peak speed 10.6 m/s; final perch error 0.00 mm; buttons during flight disabled={'DETACH': False, 'ASSEMBLE': True, 'FLY': True}"
+  },
+  {
+   "id": 9,
+   "name": "Wingbeat: amplitude, frequency, symmetry, upstroke flex, pitch reversal",
+   "pass": true,
+   "detail": "cruise stroke \u00b135.9\u00b0 (median per beat, mean of both wings) at 3.80 Hz over 53 beats (sim time); L/R difference 0.00\u00b0 in wings-level straight flight (112 samples), up to 12.6\u00b0 in turns (roll control); peak fold upstroke 0.32 vs downstroke 0.03; mean arm pitch downstroke +5.1\u00b0 (pronated) vs upstroke -3.3\u00b0"
+  },
+  {
+   "id": 10,
+   "name": "Flight path: banked turns within limit, glide, return",
+   "pass": true,
+   "detail": "max bank 32.8\u00b0 (limit 34\u00b0); phases ['prep', 'launch', 'cruise', 'glide', 'approach', 'settle']"
+  },
+  {
+   "id": 11,
+   "name": "FLY while DETACHED: assembles first, then takes off",
+   "pass": true,
+   "detail": "click->ASSEMBLING (queued FLY); then ['ASSEMBLING', 'TAKING_OFF'] (ASSEMBLED is reached and left within one update); at take-off explode progress 0, fixture blend 0; 4.9s sim"
+  },
+  {
+   "id": 12,
+   "name": "Second flight completes and restores exactly",
+   "pass": true,
+   "detail": "states ['TAKING_OFF', 'FLYING', 'LANDING', 'ASSEMBLED']; node error 4.7e-16 m"
+  },
+  {
+   "id": 13,
+   "name": "Random command spam (120 key presses) and DETACH during flight",
+   "pass": true,
+   "detail": "states visited ['ASSEMBLED', 'ASSEMBLING', 'DETACHING', 'FLYING', 'LANDING', 'TAKING_OFF']; settled ASSEMBLED, node error 4.7e-16 m; DETACH in FLYING queued=DETACH -> ['FLYING', 'LANDING', 'DETACHING', 'DETACHED']; after re-assembly node error 4.7e-16 m; console errors 0"
+  },
+  {
+   "id": 14,
+   "name": "Hover/click part info, and idle head tracking follows the pointer",
+   "pass": true,
+   "detail": "hover -> \"Front Fuselage Shell\", click pins \"Front Fuselage Shell\"; neck yaw pointer-left +16\u00b0, pointer-right +41\u00b0"
+  },
+  {
+   "id": 15,
+   "name": "Performance and resource use",
+   "pass": false,
+   "detail": "software-GL (SwiftShader, CPU-rendered; a GPU is far faster) frame rate 0.2 fps full quality at 1100\u00d7700, 1.9 fps low quality at 900\u00d7600; 1655 WebGL draw calls per frame at full quality (shadow, AO and post passes included; target < 1500), 854 in low quality; 563 geometries, 47 textures; CPU per simulation update 0.05 ms perched / 0.06 ms in flight; JS heap 78 MB"
+  },
+  {
+   "id": 16,
+   "name": "Reload (phone-size viewport): clean start, controls on screen",
+   "pass": true,
+   "detail": "reloaded in 36.5s; state ASSEMBLED; dock at x=12..378 of 390 px; horizontal overflow=False; errors=[]"
+  }
+ ],
+ "warnings": []
+}

@@ -1,0 +1,18 @@
+[PASS]  1 Loads; GLB hierarchy present; no console errors: ready in 27.8s (software GL); 131 P_ parts, 54 joints; missing=[]; errors=[]
+[PASS]  2 Initial state ASSEMBLED with correct button enablement: state=ASSEMBLED disabled={'DETACH': False, 'ASSEMBLE': True, 'FLY': False}
+[PASS]  4 DETACH: staged explode to DETACHED with labelled exploded view: click->DETACHING; DETACHED after 4.85s sim; progress=1.000; max part travel 0.36 m; 11 visible callouts; disabled={'DETACH': True, 'ASSEMBLE': False, 'FLY': False}
+[PASS]  5 ASSEMBLE: returns to ASSEMBLED with exact restoration: click->ASSEMBLING; ASSEMBLED after 4.90s sim; part deviation dp=0.00e+00 m dq=5.96e-08 rad; 249 nodes vs load snapshot: dp=4.72e-16 m dq=4.21e-08 rad
+[PASS]  6 Six DETACH/ASSEMBLE cycles (keyboard D/A): no drift: worst node error after any cycle: 4.72e-16 m, 4.21e-08 rad
+[PASS]  7 Interrupts: ASSEMBLE mid-detach, DETACH mid-assemble, ASSEMBLE again: states ['DETACHING', 'ASSEMBLING', 'DETACHING', 'ASSEMBLING']; progress at interrupts 0.51, 0.25; settled ASSEMBLED after 2.98s; node error 4.7e-16 m / 4.2e-08 rad
+[PASS]  8 FLY: take-off, flight, landing, back on the perch: states ['TAKING_OFF', 'FLYING', 'LANDING', 'ASSEMBLED']; phases ['prep', 'launch', 'cruise', 'glide', 'approach', 'settle']; 29.6s sim; max step 0.115 m/frame (no teleports); lowest root height 1.01 m; peak speed 10.6 m/s; final perch error 0.00 mm; buttons during flight disabled={'DETACH': False, 'ASSEMBLE': True, 'FLY': True}
+[PASS]  9 Wingbeat: amplitude, frequency, symmetry, upstroke flex, pitch reversal: cruise stroke ±35.9° (median per beat, mean of both wings) at 3.80 Hz over 53 beats (sim time); L/R difference 0.00° in wings-level straight flight (112 samples), up to 12.6° in turns (roll control); peak fold upstroke 0.32 vs downstroke 0.03; mean arm pitch downstroke +5.1° (pronated) vs upstroke -3.3°
+[PASS] 10 Flight path: banked turns within limit, glide, return: max bank 32.8° (limit 34°); phases ['prep', 'launch', 'cruise', 'glide', 'approach', 'settle']
+[PASS] 11 FLY while DETACHED: assembles first, then takes off: click->ASSEMBLING (queued FLY); then ['ASSEMBLING', 'TAKING_OFF'] (ASSEMBLED is reached and left within one update); at take-off explode progress 0, fixture blend 0; 4.9s sim
+[PASS] 12 Second flight completes and restores exactly: states ['TAKING_OFF', 'FLYING', 'LANDING', 'ASSEMBLED']; node error 4.7e-16 m
+[PASS] 13 Random command spam (120 key presses) and DETACH during flight: states visited ['ASSEMBLED', 'ASSEMBLING', 'DETACHING', 'FLYING', 'LANDING', 'TAKING_OFF']; settled ASSEMBLED, node error 4.7e-16 m; DETACH in FLYING queued=DETACH -> ['FLYING', 'LANDING', 'DETACHING', 'DETACHED']; after re-assembly node error 4.7e-16 m; console errors 0
+[PASS] 14 Hover/click part info, and idle head tracking follows the pointer: hover -> "Front Fuselage Shell", click pins "Front Fuselage Shell"; neck yaw pointer-left +16°, pointer-right +41°
+[PASS] 16 Reload (phone-size viewport): clean start, controls on screen: reloaded in 36.5s; state ASSEMBLED; dock at x=12..378 of 390 px; horizontal overflow=False; errors=[]
+[PASS]  3 Camera orbit, zoom, pan and reset (mouse + reset button): drag moved camera 1.415 m; wheel distance 1.30->1.35 m; right-drag panned 0.065 m (view direction change 0.0000); reset lands 0.0 mm from the default view
+[FAIL] 15 Performance and resource use: software-GL (SwiftShader, CPU-rendered; a GPU is far faster) frame rate 0.2 fps full quality at 1100×700, 1.9 fps low quality at 900×600; 1655 WebGL draw calls per frame at full quality (shadow, AO and post passes included; target < 1500), 854 in low quality; 563 geometries, 47 textures; CPU per simulation update 0.05 ms perched / 0.06 ms in flight; JS heap 78 MB
+
+15/16 passed
